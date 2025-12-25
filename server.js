@@ -5,6 +5,7 @@ const cors = require("cors");
 const crypto = require("crypto");
 
 const app = express();
+const PORT = process.env.PORT || 4000;
 
 // middlewares
 app.use(cors());
@@ -66,6 +67,6 @@ app.post("/verify-payment", (req, res) => {
   }
 });
 
-app.listen(4000, () => {
-  console.log("Backend running at http://localhost:4000");
+app.listen(PORT, () => {
+  console.log("Backend running on port", PORT);
 });
